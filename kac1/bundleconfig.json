@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "accounts/templates/base.min.html",
+    "inputFiles": [
+      "accounts/templates/base.html"
+    ]
+  }
+]

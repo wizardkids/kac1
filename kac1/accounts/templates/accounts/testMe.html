@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>testMe</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>User Profile</h2>
+            <p>DATA1:</p>
+            -- {{ entry }} --
+            {% for i in entry %}
+                <p>id: {{ i.id }}</p>
+                <h3>USER: {{ i.username }}</h3>
+                <p>date_joined: {{ i.date_joined }}</p>
+                <p>first_name: {{ i.first_name }}</p>
+                <p>last_name: {{ i.last_name }}</p>
+                <p>DESCRIPTION: {{ i.description }}</p>
+                <p>CITY: {{ i.city }}</p>
+                <p>AGE: {{ i.age }}</p>
+                <p>last_login: {{ i.last_login }}</p>
+            {% endfor %}
+
+        <p style="font-weight:bold;"><br>============================================================</p>
+
+        <p>CSRF_COOKIE: {{ r.META.CSRF_COOKIE }}</p>
+        <p>HTTP_REFERER: {{ r.META.HTTP_REFERER }}</p>
+        <p>PATH: {{ r.path }}</p>
+        <p>HTTP METHOD: {{ r.method }}</p>
+        <p>ENCODING: {{ r.encoding }}</p>
+        <p>CONTENT_TYPE: {{ r.content_type }}</p>
+        <p>GET: {{ r.GET }}</p>
+        <p>resolver_match: {{ r.resolver_match }}</p>
+        <p>current_app: {{ r.current_app }}</p>
+        <p>urlconf: {{ r.urlconf }}</p>
+
+        <p style="font-weight:bold;"><br>======================== HTTP META ==========================</p>
+
+        {% for k, v in r.META.items %}
+            <p>{{ k }}, {{ v }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
