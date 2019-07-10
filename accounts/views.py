@@ -1,11 +1,13 @@
-from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import PasswordChangeForm, UserChangeForm
-from django.contrib.auth.models import User
-from django.shortcuts import redirect, render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from accounts.forms import EditProfileForm, RegistrationForm
+from accounts.forms import RegistrationForm, EditProfileForm
+
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+from . import models
 
 
 def home(request):

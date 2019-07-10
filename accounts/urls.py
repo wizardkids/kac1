@@ -1,8 +1,5 @@
 from django.conf.urls import url
-from django.contrib.auth import login, logout
-# , password_reset, password_reset_complete, password_reset_confirm, password_reset_done)
-from django.contrib.auth.views import PasswordResetView
-from django.urls import path
+from django.contrib.auth.views import login, logout
 from django.views.generic import TemplateView
 
 from . import views
@@ -12,11 +9,6 @@ from . import views
 # url(r'^profile/password/$', views.change_password, name='change_password2'),
 
 urlpatterns = [
-    path(
-        'accounts/password_reset/',
-        PasswordResetView.as_view(),
-        name = 'password_reset'
-    ),
     url(r'^profile/$', views.view_profile, name='view_profile'),
     url(r'^login/$', login, {'template_name': 'accounts/login.html'}, name='login'),
     url(r'^logout/$', logout, {'template_name': 'accounts/logout.html'}, name='logout'),
@@ -28,3 +20,4 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='accounts/home.html'), name='home'),
     url(r'^profile/password/$', views.change_password, name='change_password2'),
     url(r'^testMe/$', views.testMe, name='testMe'), ]
+

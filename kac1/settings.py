@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'kac.middleware.LoginRequiredMiddleWare',
+    'kac1.middleware.LoginRequiredMiddleWare',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'kac.urls'
+ROOT_URLCONF = 'kac1.urls'
 
 TEMPLATES = [
     {
@@ -65,7 +65,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kac.wsgi.application'
+WSGI_APPLICATION = 'kac1.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -132,10 +132,6 @@ LOGIN_URL = '/account/login/'
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',
     r'^account/register/$',
-    r'^account/reset-password/$',
-    r'^account/reset-password/done/$',
-    r'^account/reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
-    r'^account/reset-password/complete/$',
 )
 
 # python -m smtpd -n -c DebuggingServer localhost:1025
@@ -145,7 +141,7 @@ if DEBUG:
     EMAIL_HOST_USER = ''
     EMAIL_HOST_PASSWORD = ''
     EMAIL_USE_TLS = False
-    DEFAULT_FROM_EMAIL = 'kac@email.com'
+    DEFAULT_FROM_EMAIL = 'kac1@email.com'
 
 # try:
 #     from .local_settings import *

@@ -1,6 +1,6 @@
 from django.contrib import admin
-
 from accounts.models import UserProfile
+
 
 # here is one method of changing the header in admin pages
 # admin.site.site_header = "KAC Administration"
